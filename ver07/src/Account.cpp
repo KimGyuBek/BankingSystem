@@ -11,7 +11,7 @@ Account::Account(int ID, int money, const char *cusName)
 Account::Account(const Account &ref)
 	:accID(ref.accID), balance(ref.balance)
 {
-	cusName = new char[strlen(ref.balance)+1];
+	cusName = new char[strlen(ref.cusName)+1];
 	strcpy(cusName, ref.cusName);
 }
 
@@ -30,6 +30,7 @@ int Account::Withdraw(int money)
 	if(balance < money)
 		return 0;
 	balance -= money;
+	return balance;
 }
 
 void Account::ShowAccInfo() const
