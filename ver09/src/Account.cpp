@@ -7,7 +7,7 @@ Account::Account(int ID, int money, String cusName)
 //	this->cusName = new char[strlen(cusName)+1];
 //	strcpy(this->cusName, cusName);
 	
-	this->cusName = &cusName;
+	this->cusName = cusName;
 }
 
 //Account::Account(const Account &ref)

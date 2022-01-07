@@ -9,7 +9,7 @@ class Account
 		
 		int accID;
 		int balance;
-		String *cusName;
+		String cusName;
 	public:
 		Account(int ID, int money, String cusName);
 //		Account(const Account &ref);
