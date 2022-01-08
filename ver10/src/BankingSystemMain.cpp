@@ -1,6 +1,8 @@
 #include "BankingCommonDecl.h"
 #include "AccountHandler.cpp"
-
+//#include "AccountArray.cpp"
+#include "String.cpp"
+#include "BoundCheckArray.h"
 int main(void)
 {
 	AccountHandler manager;

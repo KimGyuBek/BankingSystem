@@ -1,14 +1,16 @@
-#ifndef __BOUND_CHECK_ARRAY__
-#define __BOUND_CHECK_ARRAY__
+#ifndef __ACCOUNT_CHECK_ARRAY_H__
+#define __ACCOUNT_CHECK_ARRAY_H__
 
-template<typename T>
+#include "BankingCommonDecl.h"
+
+template <typename T>
 class BoundCheckArray
 {
 	private:
 		T *arr;
-		int arrlen;
+		int arrLen;
 		BoundCheckArray(const BoundCheckArray &arr) {}
-		BoundCheckArray& operator=(const BoundCheckArray &arr) {}
+		BoundCheckArray& operator= (const BoundCheckArray& arr) {}
 	public:
 		BoundCheckArray(int len = 100);
 		T& operator[] (int idx);
@@ -19,15 +21,15 @@ class BoundCheckArray
 
 template<typename T>
 BoundCheckArray<T>::BoundCheckArray(int len)
-	:arrlen(len)
+	:arrLen(len)
 {
 	arr = new T[len];
 }
 
 template<typename T>
-T& BoundCheckArray<T>::operator[](int idx)
+T& BoundCheckArray<T>::operator[] (int idx)
 {
-	if(idx < 0 || idx >=arrlen)
+	if(idx < 0 || idx > arrLen)
 	{
 		cout << "Array index out of bound exception" << endl;
 		exit(1);
@@ -35,10 +37,10 @@ T& BoundCheckArray<T>::operator[](int idx)
 	return arr[idx];
 }
 
-template <typename T>
+template<typename T>
 T BoundCheckArray<T>::operator[] (int idx) const
 {
-	if(idx < 0 || idx >=arrlen)
+	if(idx < 0 || idx > arrLen)
 	{
 		cout << "Array index out of bound exception" << endl;
 		exit(1);
@@ -46,16 +48,16 @@ T BoundCheckArray<T>::operator[] (int idx) const
 	return arr[idx];
 }
 
-template <typename T>
+template<typename T>
 int BoundCheckArray<T>::GetArrLen() const
 {
-	return arrlen;
+	return arrLen;
 }
 
-template <typename T>
+template<typename T>
 BoundCheckArray<T>::~BoundCheckArray()
 {
 	delete []arr;
-
-
-#endif 
+}
+	
+#endif
