@@ -1,8 +1,7 @@
 #include "BankingCommonDecl.h"
-//#include "AccountHandler.h"
 #include "AccountHandler.cpp"
-//#include "./AccountHandler.h"
-
+#include "AccountArray.cpp"
+#include "String.cpp"
 int main(void)
 {
 	AccountHandler manager;
