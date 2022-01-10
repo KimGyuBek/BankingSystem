@@ -2,6 +2,7 @@
 #define __ACCOUNT_H__
 
 #include "String.h"
+#include "AccountException.h"
 
 class Account
 {
@@ -16,8 +17,8 @@ class Account
 //		Account& operator=(const Account& ref);
 
 		int GetAccID() const;
-		virtual void Deposit(int money);
-		int Withdraw(int money);
+		virtual void Deposit(int money); 
+		int Withdraw(int money); 
 		void ShowAccInfo() const;
 //		~Account();
 };
